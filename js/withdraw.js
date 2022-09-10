@@ -17,14 +17,23 @@ document.getElementById("btn-withdraw").addEventListener("click", function () {
   const previousWithdrawTotal = getTextElementValueById("withdraw-total");
   // console.log(previousWithdrawTotal)
 
+  const previousBalanceTotal = getTextElementValueById("balance-total");
+  if (newWithdrawAmount > previousBalanceTotal) {
+    alert('your account does not have enough balance to withdraw')
+    return;
+  }
   const newWithdrawTotal = previousWithdrawTotal + newWithdrawAmount;
   // console.log(newWithdrawTotal, previousWithdrawTotal, newWithdrawAmount)
   setTextElementValueById('withdraw-total', newWithdrawTotal);
 
-  const previousBalanceTotal = getTextElementValueById("balance-total");
+  
   const newBalanceTotal = previousBalanceTotal - newWithdrawAmount;
   setTextElementValueById("balance-total", newBalanceTotal);
+ 
+ 
 });
+
+
 
 // document.getElementById('btn-withdraw').addEventListener('click',function() {
 //     // console.log('withdraw btn are clicked');

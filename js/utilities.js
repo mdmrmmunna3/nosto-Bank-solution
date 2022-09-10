@@ -15,6 +15,14 @@ function getTextElementValueById(elementId) {
 }
 function setTextElementValueById(elementId, newValue) {
   const textElement = document.getElementById(elementId);
-  textElement.innerText = newValue;
+  // textElement.innerText = newValue;
   // console.log(textElement.innerText)
+  if(isNaN (newValue)) {
+  alert ('please enter a amount do you want!!!')
 }
+else {
+  textElement.innerText = newValue ;
+}
+  
+}
+
